@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class DeskListResource extends JsonResource
+class CardsResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,7 +18,8 @@ class DeskListResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'created_at' => $this->created_at,
-            'cards' => CardsResource::collection($this->cards),
+            'updated_at' => $this->updated_at,
+            'tasks' => TasksResource::collection($this->tasks),
         ];
     }
 }
